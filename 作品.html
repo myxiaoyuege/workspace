@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>肖跃各fullPage.js作品</title>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="js/ZoomPic.js"></script>  <!-- one样式 -->
+<script src="js/3-panel-slider.js"></script> <!-- two样式 -->
+<script src="js/jquery-2.0.2.min.js"></script> <!-- two样式 -->
+<script src="js/jquery-ui-1.10.4.min.js"></script> <!-- two样式 -->
+<script src="js/jquery.fullPage.min.js"></script>
+<script src="js/jquery.packed.js"></script>
+<script src="js/demo.js"></script><!--背景-->
+<script src="js/jquery.particleground.min.js"></script><!--背景-->
+
+<link rel="stylesheet" href="css/jquery.fullPage.css">
+<link rel="stylesheet" href="css/index.css">  
+<link rel="stylesheet" href="css/css.css">  
+<link rel="stylesheet" href="css/jq22.css">
+<link rel="stylesheet" href="css/bg.css"><!--背景-->
+<!--旋转-->
+<link rel='stylesheet prefetch' href='http://www.jq22.com/jquery/font-awesome.4.6.0.css'><!--链接的在线图标-->
+<link rel="stylesheet" href="css/one.min.css">
+<link rel="stylesheet" href="css/two.css">
+<link rel="stylesheet" href="css/three.css">
+<!--旋转-->
+<!--fullpage自身的样式-->
+	<!--标题-->
+	<ul id="menu">
+		<li data-menuanchor="page1" class="active"><a href="#page1">首页</a></li>
+		<li data-menuanchor="page2"><a href="#page2">川菜</a></li>
+		<li data-menuanchor="page3"><a href="#page3">鲁菜</a></li>
+		<li data-menuanchor="page4"><a href="#page4">粤菜</a></li>
+		<li data-menuanchor="page5"><a href="#page5">淮扬菜</a></li>
+		<li data-menuanchor="page6"><a href="#page6">菜系名馆</a></li>
+	</ul>
+
+<style>
+.section1 { background: url(images/bg1.jpg) 50%;}
+.section2 { background: url(images/bg2.jpg) 50%;}
+.section3 { background: url(images/淮2.jpg) 50%;}
+.section4 { background: url(images/粤菜5.jpg) 50%;}
+.section5 { background: url(images/鲁菜.jpg) 50%;}
+.section6 { background: url(images/粤菜.jpg) 50%;}
+/*标题部分*/
+#menu { position:fixed; top:10px; olist-style-type: none; z-index: 70; left: 30%;}
+#menu li { float: left; margin-right: 20px;}
+#menu a { float: left; padding: 10px 20px; color: #333; text-decoration: none; font-size: 18px;}
+#menu .active a { color: #fff; background:rgba(40,8,10,0.8); font-size: 20px;}
+.section { text-align: center; font: 50px "Microsoft Yahei"; color: #fff;}
+</style>
+
+
+
+<script>
+$(function(){
+	$('#dowebok').fullpage({
+	 anchors: ['page1', 'page2', 'page3', 'page4',"page5","page6"],
+		menu: '#menu',
+    //控制器
+	"navigationPosition":"left",
+	'navigation':true,
+	//控制器结束
+	//继续循环
+	continuousVertical: true
+});	
+	//选项卡代码
+new ZoomPic("jswbox");
+//定时	
+	/*setInterval(function(){
+       		 $.fn.fullpage.moveSectionDown();
+    }, 3000);*/
+
+/*淮扬菜代码  */  
+$(function() {
+				var $l = $('#carousel-left'),
+					$c = $('#carousel-center'),
+					$r = $('#carousel-right');
+				$l.carouFredSel({
+					auto: false,
+					items: 1,
+					direction: 'right',
+					prev: {
+						button: '#prev',
+						fx: 'uncover',
+						onBefore: function() {
+							setTimeout(function() {
+								$c.trigger( 'prev' );
+							}, 100);
+						}
+					},
+					next: {
+						fx: 'cover'
+					}
+				});
+				$c.carouFredSel({
+					auto: false,
+					items: 1,
+					prev: {
+						onBefore: function() {
+							setTimeout(function() {
+								$r.trigger( 'prev' );
+							}, 100);
+						}
+					},
+					next: {
+						onBefore: function() {
+							setTimeout(function() {
+								$l.trigger( 'next' );
+							}, 100);
+						}
+					}
+				});
+				$r.carouFredSel({
+					auto: false,
+					items: 1,
+					prev: {
+						fx: 'cover'
+					},
+					next: {
+						button: '#next',
+						fx: 'uncover',
+						onBefore: function() {
+
+							setTimeout(function() {
+
+								$c.trigger( 'next' );
+
+							}, 100);
+
+						}
+
+					}
+
+				});
+
+			});
+/*淮扬菜代码  */  
+
+});
+</script>
+</head>
+
+<body>
+<!--内容-->
+<div id="dowebok">
+	<div class="section section1">
+		<!--bg-->
+			<div id="particles">
+				<div class="intro">
+					<h1>Chinese classic cuisine</h1>
+					<p>Millennium cultural heritage, Chinese cuisine</p>
+				</div>
+			</div>
+			<!--旋转-->
+			<div id='ss_menu'>
+				<div>
+					<i class="fa fa-qq"></i>
+				</div>
+				<div>
+					<i class="fa fa-weibo"></i>
+				</div>
+				<div>
+					<i class="fa fa-weixin"></i>
+				</div>
+				<div>
+					<i class="fa fa-renren"></i>
+				</div>
+				<div class='menu'>
+					<div class='share' id='ss_toggle' data-rot='180'>
+						<div class='circle'></div>
+						<div class='bar'></div>
+					</div>
+				</div>
+			</div>
+
+	</div>
+
+
+
+
+
+   	<div class="section section2">
+		<div id="d"> <span style="font-size: 28px; color: #28080a">川菜</span>    即四川菜肴，是中国特色传统的四大菜系之一、中国八大菜系之一。新常态下对现代川菜理论体系的重新构建，包括川菜三派的划分，是在已有定论的上河帮，小河帮，下河帮的基础上，规范化完整表述为：川西地区以成都官府菜、眉山菜为代表的上河帮川菜；川南地区以自贡盐帮菜、内江糖帮菜、泸州河鲜菜、宜宾三江菜共同为特色的小河帮川菜，川东地区以重庆江湖菜为典范的下河帮川菜。三者共同组成川菜三大主流地方风味流派分支菜系，代表川菜发展最高艺术水平。</div>
+	  <div id="jswbox" style="display: block; margin-top:80px;">
+	<pre class="prev">prev</pre>
+	<pre class="next">next</pre>
+	<ul>
+		<li><img src="images/c1.jpg"/></li>
+		<li><img src="images/c2.jpg"/></li>
+		<li><img src="images/c3.jpg"/></li>
+		<li><img src="images/c4.jpg"/></li>
+		<li><img src="images/c5.jpg"/></li>
+		<li><img src="images/c6.jpg"/></li>
+		<li><img src="images/c7.jpg"/></li>
+	</ul>
+</div>
+	</div>
+	<div class="section section3">		
+	<div id="c">
+				<span style=" font-size: 28px; color: #28080a">鲁菜</span>，是起源于山东的齐鲁风味，是中国传统四大菜系（也是八大菜系）中唯一的自发型菜系（相对于淮扬、川、粤等影响型菜系而言）[1]  ，是历史最悠久、技法最丰富、难度最高、最见功力[2]  的菜系。
+				2500年前源于山东的儒家学派奠定了中国饮食注重精细、中和、健康的审美取向；1600年《齐民要术》总结的黄河中下游地区的“蒸、煮、烤、酿、煎、炒、熬、烹、炸、腊、盐、豉、醋、酱、酒、蜜、椒”奠定了中式烹调技法的框架；明清时期大量山东厨师和菜品进入宫廷，使鲁菜雍容华贵、中正大气、平和养生的风格特点进一步得到升华。
+		<p style="font-size: 20px; color:#363233; padding-top: 50px;">可翻看美食</p>
+	</div>
+			<div id="book">
+			<canvas id="pageflip-canvas"></canvas>
+			<div id="pages">
+				<section>
+					<div>
+						<img src="images/l1.jpg">
+					</div>
+				</section>
+				<section>
+					<div>
+						<img src="images/l2.jpg">
+					</div>
+				</section>
+				<section>
+					<div>
+						<img src="images/l3.jpg">
+					</div>
+				</section>
+				<section>
+					<div>
+						<img src="images/l4.jpg">
+					</div>
+				</section>
+                <section>
+					<div>
+						<img src="images/l5.jpg">
+					</div>
+				</section>
+                <section>
+					<div>
+						<img src="images/l6.jpg">
+					</div>
+				</section>
+                <section>
+					<div>
+						<img src="images/l7.jpg">
+					</div>
+				</section>
+                <section>
+					<div>
+						<img src="images/l8.jpg">
+					</div>
+				</section>
+                <section>
+					<div>
+						<img src="images/l9.jpg">
+					</div>
+				</section>
+			</div>
+		</div>
+	<script src="js/pageflip.js"></script> <!--  翻书代码 -->
+	</div>
+	<div class="section section4">
+	<div id="b"><span style="font-size: 28px; color: #28080a">粤菜</span>即广东菜，是中国传统四大菜系、八大菜系之一。狭义上的粤菜指广州府菜，也就是广州菜，此处的广州府含：顺(德) ,南(海) ,番(禺) 。粤菜因其选料严格、做工精细、中西结合、质鲜味美、养生保健等特点而名扬天下。</div>
+		<div id="slider">
+	<div id="slider-panels">
+		<div id="slider-panels-next"><span class="iconb" data-icon="&#xe24e;"></span></div>
+		<div id="slider-panels-previous"><span class="iconb" data-icon="&#xe24b;"></span></div>
+
+		<div id="slider-panel-images">
+			<img src="images/y1.jpg" width="900" height="400" />
+			<img src="images/y2.jpg" width="900" height="400" />
+			<img src="images/y3.jpg" width="900" height="400" />
+			<img src="images/y4.jpg" width="900" height="400" />
+			<img src="images/y5.jpg" width="900" height="400" />
+			<img src="images/y6.jpg" width="900" height="400" />
+		</div>
+
+		<div id="slider-panel-left">
+			<div id="slider-panel-left-carousel" ></div>
+		</div>
+
+		<div id="slider-panel-center">
+			<div id="slider-panel-center-carousel"></div>
+		</div>
+
+		<div id="slider-panel-right">
+			<div id="slider-panel-right-carousel"></div>
+		</div>
+		<div id="slider-dots"></div>
+	</div>
+</div>
+	</div>
+	<div class="section section5">
+	<div id="a"><span style="font-size: 28px; color: #28080a">淮扬菜</span>是中国传统四大菜系之一，发源于扬州、淮安。菜系充满淮、扬特点。原料多以水产为主，淮扬菜系大多以江湖河鲜为主料，以顶尖烹艺为支撑，以本味本色为上乘，以妙契众口为追求，雅俗共赏而不失其大雅，尤其是“和、精、清、新”的独特理念。淮扬菜十分讲究刀工，刀功比较精细，尤以瓜雕享誉四方。菜品形态精致，滋味醇和；在烹饪上则善用火候，讲究火功，擅长炖、焖、煨、焐、蒸、烧、炒；原料多以水产为主，注重鲜活，口味平和，清鲜而略带甜味,其菜品细致精美，格调高雅。</div>
+	<div id="wrapper">
+		<div id="carousel-left">
+			<img src="images/h7.jpg" width="450" height="325">
+			<img src="images/h6.jpg" width="450" height="325">
+			<img src="images/h5.jpg" width="450" height="325">
+			<img src="images/h4.jpg" width="450" height="325">
+			<img src="images/h1.jpg" width="450" height="325">
+			<img src="images/h2.jpg" width="450" height="325">
+			<img src="images/h3.jpg" width="450" height="325">
+		</div>
+		<div id="carousel-center">
+			<img src="images/h1.jpg" width="550" height="400">
+			<img src="images/h2.jpg" width="550" height="400">
+			<img src="images/h3.jpg" width="550" height="400">
+			<img src="images/h4.jpg" width="550" height="400">
+			<img src="images/h7.jpg" width="550" height="400">
+			<img src="images/h6.jpg" width="550" height="400">
+			<img src="images/h5.jpg" width="550" height="400">
+		</div>
+		<div id="carousel-right">
+			<img src="images/h2.jpg" width="450" height="325">
+			<img src="images/h3.jpg" width="450" height="325">
+			<img src="images/h6.jpg" width="450" height="325">
+			<img src="images/h7.jpg" width="450" height="325">
+			<img src="images/h5.jpg" width="450" height="325">
+			<img src="images/h4.jpg" width="450" height="325">
+			<img src="images/h1.jpg" width="450" height="325">
+		</div>
+			<a id="prev" href="#">&lsaquo;</a>
+			<a id="next" href="#">&rsaquo;</a>
+		</div>
+    </div>
+	<div class="section section6">
+			<div class="slide slide1">
+		    <div class="left">
+	    <div style="font-size: 20px; display: block;margin-right: 600px; color: #28080a">川菜名馆</div>
+			<div id="box1">
+		<div id="content">
+			<div class="show" style="color:#ffffff; font-size: 18px; padding: 15px 0px 15px 0px ">地址：新天府大道中段1号新会展中心廊桥166号<img src="images/6.1.jpg"></div>
+			<div style="color:#ffffff; font-size: 18px; padding: 15px 0px 15px 0px ">成都市金牛区一品天下大街<img src="images/6.2.jpg"></div>
+			<div style="color:#ffffff; font-size: 18px; padding: 15px 0px 15px 0px ">成都青羊区青华路10号附10-12号<img src="images/6.3.jpg"></div>
+		</div>
+		<ul id="ag">
+			<li class="show1">
+				<img src="images/s1.png">
+				<p>顺兴老菜馆</p>
+			</li>
+			<li>
+				<img src="images/s2.png">
+				<p>红杏酒家</p>
+			</li>
+			<li>
+				<img src="images/s2.png">
+				<p>陈麻婆豆腐</p>
+			</li>
+		</ul>
+		</div>
+			</div>
+			<div class="right">
+				<div class="tit">
+					<h2>川菜菜单</h2><a href="#">了解详情</a>
+			   </div>
+			   <div class="box">
+			   	<ul>
+			   		<li>鱼香肉丝</li>
+			   		<li>宫保鸡丁</li>
+			   		<li>辣子鸡丁</li>
+			   		<li>回锅肉</li>
+			   		<li>麻辣牛柳</li>
+			   		<li>灯影牛肉</li>
+			   		<li>辣子鸡......</li>
+			   	</ul>
+			   </div>
+			</div>
+			</div>
+			<div class="slide slide2">
+				<div class="box2">
+				<div class="tit">
+					<h2>鲁菜菜单</h2><a href="#">了解详情</a>
+			   </div>
+			   <div class="box">
+			   	<ul>
+			   		<li>三丝鱼翅</li>
+			   		<li>白扒四宝</li>
+			   		<li>九转大肠</li>
+			   		<li>油焖大虾</li>
+			   		<li>糖酱鸡块</li>
+			   		<li>黄焖鸡块</li>
+			   		<li>烩两鸡丝......</li>
+			   	</ul>
+			   </div>	
+				</div>
+				<div class="left2">
+	       <div style="font-size: 20px; padding-left: 80px; color: #28080a">鲁菜名馆</div>
+
+			<div id="box2">
+		<div id="content1">
+			<div class="show" style="color:#ffffff; font-size: 18px; padding: 15px 0px 15px 0px ">地址:济南市历下区济南历下区大明湖路1号(近大明湖)<img src="images/6.1.1.jpg"></div>
+			<div style="color:#ffffff; font-size: 18px; padding: 15px 0px 15px 0px ">地址：济南市中区经五路11号<img src="images/6.1.2.jpg"></div>
+			<div style="color:#ffffff; font-size: 18px; padding: 15px 0px 15px 0px ">地址：济南市历下区旅游路6号<img src="images/6.1.3.jpg"></div>
+		</div>
+		<ul id="ag1">
+			<li class="show1">
+				<img src="images/s1.png">
+				<p>鹊华居</p>
+			</li>
+			<li>
+				<img src="images/s2.png">
+				<p>聚丰德</p>
+			</li>
+			<li>
+				<img src="images/s2.png">
+				<p>鱼翅皇宫</p>
+			</li>
+		</ul>
+		</div>
+			</div>	
+			</div>
+			<div class="slide slide3">
+				<div class="box3">
+				<div class="tit">
+					<h2>粤菜菜单</h2><a href="#">了解详情</a>
+			   </div>
+			   <div class="box">
+			   	<ul>
+			   		<li>深井烧鹅</li>
+			   		<li>梅菜扣肉</li>
+			   		<li>鱼头豆腐汤</li>
+			   		<li>广州文昌鸡</li>
+			   		<li>鼎湖上素</li>
+			   		<li>沙茶牛肉</li>
+			   		<li>白切鸡......</li>
+			   	</ul>
+			   </div>	
+				</div>
+				<div class="left2">
+	    <div style="font-size: 20px; padding-left: 80px; color: #28080a">粤菜名馆</div>
+			<div id="box3">
+		<div id="content2">
+			<div class="show" style="color:#ffffff; font-size: 18px; padding: 15px 0px 15px 0px ">地址：广州市荔湾区龙津西路151号<img src="images/6.2.1.jpg"></div>
+			<div style="color:#ffffff; font-size: 18px; padding: 15px 0px 15px 0px ">地址：广州海珠区工业大道李家山2号<img src="images/6.2.2.jpg"></div>
+			<div style="color:#ffffff; font-size: 18px; padding: 15px 0px 15px 0px ">地址：广州市海珠区前进路142号<img src="images/6.2.3.jpg"></div>
+		</div>
+
+		<ul id="ag2">
+			<li class="show1">
+				<img src="images/s1.png">
+				<p>畔溪酒家</p>
+			</li>
+			
+			<li>
+				<img src="images/s2.png">
+				<p>莲香楼</p>
+			</li>
+			
+			<li>
+				<img src="images/s2.png">
+				<p>南园酒家</p>
+			</li>
+		</ul>
+		</div>
+			</div>
+			</div>
+			<div class="slide slide4">
+				<div class="box4">
+				<div class="tit">
+					<h2>淮扬菜菜单</h2><a href="#">了解详情</a>
+			   </div>
+			   <div class="box">
+			   	<ul>
+			   		<li>松鼠厥鱼</li>
+			   		<li>梁溪脆鳝</li>
+			   		<li>水晶肴肉</li>
+			   		<li>松仁玉米</li>
+			   		<li>扬州炒饭</li>
+			   		<li>大煮干丝</li>
+			   		<li>三套鸭......</li>
+			   	</ul>
+			   </div>	
+				</div>
+		        <div class="left3">
+			    <div style="font-size: 20px; color: #28080a; display: block; margin-right: 600px;">淮扬菜名馆</div>
+			<div id="box4">
+		<div id="content3">
+			<div class="show" style="color:#ffffff; font-size: 18px; padding: 15px 0px 15px 0px ">地址：扬州市老城区得胜桥<img src="images/6.3.1.jpg"></div>
+			<div style="color:#ffffff; font-size: 18px; padding: 15px 0px 15px 0px ">地址：广陵区得胜桥街路35号<img src="images/6.3.2.jpg"></div>
+			<div style="color:#ffffff; font-size: 18px; padding: 15px 0px 15px 0px ">地址：开发区兴城西路83号<img src="images/6.3.3.jpg"></div>
+		</div>
+
+		<ul id="ag3">
+			<li class="show1">
+				<img src="images/s1.png">
+				<p>富春茶社</p>
+			</li>
+
+			<li>
+				<img src="images/s2.png">
+				<p>冶春饭店</p>
+			</li>
+
+			<li>
+				<img src="images/s2.png">
+				<p>花园茶楼</p>
+			</li>
+		</ul>
+		</div>
+			</div>	
+			</div>
+			</div>
+</div>
+<script type="text/javascript">
+		var a=document.getElementById('ag').getElementsByTagName('li');
+		var b=document.getElementById("content").getElementsByTagName("div");
+		var c=0;/*保存当前索引位置*/
+		//循环li并添加鼠标事件
+		for(var i=0;i<a.length;i++){
+			a[i]._index=i;
+			a[i].onmouseover=function(){
+				//更改上一个选项卡的内容
+		  	   a[c].className="";
+		  	   //隐藏上一个内容区
+		  	   b[c].className="";
+		  	   //更改当前选项卡的样式
+		  	   this.className="show1";
+		  	   //显示对应div的内容区
+		  	   b[this._index].className="show";
+
+
+				//修改当前被选中的选项卡的索引值
+				c=this._index;
+
+		  }
+		}
+		  
+	</script>
+<script type="text/javascript">
+
+		var a1=document.getElementById('ag1').getElementsByTagName('li');
+		var b1=document.getElementById("content1").getElementsByTagName("div");
+		var c1=0;/*保存当前索引位置*/
+		//循环li并添加鼠标事件
+		for(var i=0;i<a1.length;i++){
+			a1[i]._index=i;
+			a1[i].onmouseover=function(){
+				//更改上一个选项卡的内容
+		  	   a1[c1].className="";
+		  	   //隐藏上一个内容区
+		  	   b1[c1].className="";
+		  	   //更改当前选项卡的样式
+		  	   this.className="show1";
+		  	   //显示对应div的内容区
+		  	   b1[this._index].className="show";
+
+
+				//修改当前被选中的选项卡的索引值
+				c1=this._index;
+
+		  }
+
+	}	  
+	</script>
+<script type="text/javascript">
+
+				var a2=document.getElementById('ag2').getElementsByTagName('li');
+				var b2=document.getElementById("content2").getElementsByTagName("div");
+				var c2=0;/*保存当前索引位置*/
+				//循环li并添加鼠标事件
+				for(var i=0;i<a2.length;i++){
+					a2[i]._index=i;
+					a2[i].onmouseover=function(){
+						//更改上一个选项卡的内容
+				  	   a2[c2].className="";
+				  	   //隐藏上一个内容区
+				  	   b2[c2].className="";
+				  	   //更改当前选项卡的样式
+				  	   this.className="show1";
+				  	   //显示对应div的内容区
+				  	   b2[this._index].className="show";
+		
+		
+						//修改当前被选中的选项卡的索引值
+						c2=this._index;
+		
+				  }
+			}	  
+</script>
+<script type="text/javascript">
+
+				var a3=document.getElementById('ag3').getElementsByTagName('li');
+				var b3=document.getElementById("content3").getElementsByTagName("div");
+				var c3=0;/*保存当前索引位置*/
+				//循环li并添加鼠标事件
+				for(var i=0;i<a3.length;i++){
+					a3[i]._index=i;
+					a3[i].onmouseover=function(){
+						//更改上一个选项卡的内容
+				  	   a3[c3].className="";
+				  	   //隐藏上一个内容区
+				  	   b3[c3].className="";
+				  	   //更改当前选项卡的样式
+				  	   this.className="show1";
+				  	   //显示对应div的内容区
+				  	   b3[this._index].className="show";
+		
+		
+						//修改当前被选中的选项卡的索引值
+						c3=this._index;
+		
+				  }
+
+			}	  
+</script>
+<script>
+    $(document).ready(function (ev) {
+        var toggle = $('#ss_toggle');
+        var menu = $('#ss_menu');
+        var rot;
+        $('#ss_toggle').on('click', function (ev) {
+            rot = parseInt($(this).data('rot')) - 180;
+            menu.css('transform', 'rotate(' + rot + 'deg)');
+            menu.css('webkitTransform', 'rotate(' + rot + 'deg)');
+            if (rot / 180 % 2 == 0) {
+                toggle.parent().addClass('ss_active');
+                toggle.addClass('close');
+            } else {
+                toggle.parent().removeClass('ss_active');
+                toggle.removeClass('close');
+            }
+            $(this).data('rot', rot);
+        });
+        menu.on('transitionend webkitTransitionEnd oTransitionEnd', function () {
+            if (rot / 180 % 2 == 0) {
+                $('#ss_menu div i').addClass('ss_animate');
+            } else {
+                $('#ss_menu div i').removeClass('ss_animate');
+            }
+        });
+    });
+</script>
+
+</div>
+
+</body>
+</html>
